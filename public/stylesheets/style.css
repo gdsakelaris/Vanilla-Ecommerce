@@ -1,0 +1,37 @@
+body {background-color: black; background-image: url(goodbg.jpg); background-repeat: repeat-y; background-size: cover;}
+
+/* main div to hold everything */
+
+div#main {position: static; box-sizing: border-box; width: 1000px; height: 900px; background-color: green; margin-left: auto; margin-right: auto; box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);}
+
+
+
+/* Boxes that go inside of main */
+
+header {position: static; box-sizing: border-box; width: 1000px; height: 168px; background-color: orange; background-image: url(finalmmaheader.JPG);}
+
+nav {position: static; box-sizing: border-box; width: 1000px; height: 60px; padding-top: 5px; background-color: gray; text-align: center;}
+
+aside#left {position: static; box-sizing: border-box; float: left; width: 200px; height: 650px; background-color: white; background-image: url(right.JPG); opacity: 0.7; }
+
+article {position: static; box-sizing: border-box; float: left; width: 600px; height: 650px; background-color: white; padding-left: 20px; padding-right: 20px; overflow: auto; opacity: 0.83;}
+
+aside#right {position: static; box-sizing: border-box; float: left; width: 200px; height: 650px; background-color: white; background-image: url(left.JPG); opacity: 0.7;}
+
+footer {position: static; box-sizing: border-box; /* use clear to make footer go to the next line */ clear: both; width: 1000px; height: 40px; padding-top: 10px; background-color: red;}
+
+
+h1 {text-align: center}
+
+p {font-size: 18px; text-align: center; /*font-style: oblique;*/}
+
+/* style for a tags inside of nav */
+nav a {font-family: arial; font-size: 24px; text-decoration: none; font-weight: bold; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; /* make each link behave like a little div */ display: inline-block; border: 1px solid black; border-radius: 20px;}
+
+nav a:link {color: black; background-color: red; box-shadow: 4px 4px 0px black;}
+
+nav a:visited {color: black; background-color: red; box-shadow: 4px 4px 0px black;}
+
+nav a:hover {color: black; background-color: red; box-shadow: 6px 6px 0px black; transform: translate(-2px, -2px);}
+
+nav a:active {color: white; background-color: #2529ea; box-shadow: 0px 0px 0px black; transform: translate(4px, 4px);}
