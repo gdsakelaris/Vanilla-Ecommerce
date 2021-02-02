@@ -1,2 +1,13 @@
 <h1>Welcome to Shirts Ink.</h1>
+
+<p> Date: <%= Date(Date.now()).toString() %> </p>
        
+
+<p>Here are the Books:</p>
+<% for(let i = 0; i < books.length; i++) { %>
+    <product>
+        <h2><%= books[i].title %></h1>
+        <p><%= books[i].author %></p>
+        <p><%= books[i].publishedAt %></p>
+    </product>
+<% } %>
