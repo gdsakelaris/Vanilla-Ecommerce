@@ -1,0 +1,23 @@
+<h1> Edit person </h1>
+<form action="/person/save" method="post">
+        <input type="hidden" name="person_id" value="<%=onepers.person_id%>" >
+    
+    <table>
+        
+        <tr> <td> First Name: </td> <td> <input type="text" name="firstname" value=<%= onepers.firstname %> required> </td> </tr>
+        <tr> <td> Last Name: </td> <td> <input type="text" name="lastname" value=<%= onepers.lastname %> required> </td> </tr>
+        <tr> <td> Email: </td> <td> <input type="text" name="email" value=<%= onepers.email %> required> </td> </tr>
+        <tr> <td> Phone: </td> <td> <input type="number" name="phone" value=<%= onepers.phone %> required> </td> </tr>
+        <tr> <td> Address: </td> <td> <input type="text" name="address1" value=<%= onepers.address1 %> required> </td> </tr>
+        <tr> <td> City: </td> <td> <input type="text" name="city" value=<%= onepers.city %> required> </td></tr>
+        <tr> <td> State: </td> <td> <input type="text" name="state" value=<%= onepers.state %> required> </td></tr>
+        <tr> <td> Zip: </td> <td> <input type="number" name="zip" value=<%= onepers.zip %> required> </td> </tr>
+        <tr> <td> Username: </td> <td> <input type="text" name="username" value=<%= onepers.username %> required> </td> </tr>
+        <tr> <td> Password: </td> <td> <input type="text" name="password" value=<%= onepers.password %> required> </td> </tr>
+                                                        
+                
+        
+    </table>
+    
+    <button type="submit">Save</button>
+</form>

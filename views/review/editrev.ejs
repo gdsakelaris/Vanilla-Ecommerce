@@ -1,0 +1,18 @@
+<h1> Edit Review </h1>
+<form action="/review/save" method="post">
+        <input type="hidden" name="review_id" value="<%=onerev.review_id%>" >
+    
+    <table>
+        
+        <tr> <td> Person ID: </td> <td> <input type="number" name="person_id" value=<%= onerev.person_id %> required> </td> </tr>
+        <tr> <td> Item ID: </td> <td> <input type="number" name="item_id" value=<%= onerev.item_id %> required> </td> </tr>
+        <tr> <td> Review Date: </td> <td> <input type="text" name="reviewdate" value=<%= onerev.reviewdate %> required> </td> </tr>
+        <tr> <td> Comments: </td> <td> <input type="text" name="comments" value=<%= onerev.comments %> required> </td> </tr>
+        <tr> <td> Rating: </td> <td> <input type="number" name="rating" value=<%= onerev.rating %> required> </td> </tr>
+        
+                
+        
+    </table>
+    
+    <button type="submit">Save</button>
+</form>

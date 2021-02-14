@@ -1,0 +1,33 @@
+<% if (allpersons.length > 0) {%>
+    <table>
+        <tr>
+            <th> person ID </th>
+            <th> first Name </th>
+            <th> last name </th>
+            <th> email </th>
+            <th> city </th>
+            <th> state </th>
+            <th> username </th>
+        
+        </tr>
+        <% allpersons.forEach((persref, index) => { %>
+            <tr>
+                <td><%= persref.person_id %></td>
+                <td><%= persref.firstname %></td>
+                <td><%= persref.lastname %></td>
+                <td><%= persref.email %></td>
+                <td><%= persref.city %></td>
+                <td><%= persref.state %></td>
+                <td><%= persref.username %></td>
+                <td><a href='/person/<%= persref.person_id %>/show'>Details</a></td>
+                <td><a href='/person/<%= persref.person_id%>/edit'>Edit</a></td>
+                <td><a href='/person/<%= persref.person_id %>/delete'
+                onclick="return confirm('Are you sure you want to delete this record?');">Delete</a></td>
+            </tr>
+    <% }); %>
+    </table>
+
+    <% } else { %>
+        <p>No Records Available</p>
+    <% } %>
+<p> <a href='/person/addperson'>Add New</a> </p>

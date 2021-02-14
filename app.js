@@ -4,6 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
+const mariadb = require('mariadb/callback');
+
+const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', 
+        user: 'gsakelar', password: 'gsakelar', database: 'shirtsinc'});
+
+// connect to database
+db.connect((err) => {
+    if (err) {
+        console.log("Unable to connect to database due to error: " + err);
+        res.render('error');
+    } else
+    {
+        console.log("Connected to DB");
+    }
+});
+global.db = db;
 
 
 var indexRouter = require('./routes/index');
@@ -12,7 +28,10 @@ var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var helpRouter = require('./routes/help');
 var privacyRouter = require('./routes/privacy');
-
+var itemRouter = require('./routes/item');
+var categoryRouter = require('./routes/category');
+var reviewRouter = require('./routes/review');
+var personRouter = require('./routes/person');
 
 var app = express();
 
@@ -34,7 +53,10 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/help', helpRouter);
 app.use('/privacy', privacyRouter);
-
+app.use('/item', itemRouter);
+app.use('/category', categoryRouter);
+app.use('/review', reviewRouter);
+app.use('/person', personRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

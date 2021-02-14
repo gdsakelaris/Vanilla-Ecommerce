@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
             publishedAt: new Date('2020-05-17'),
         },
         {
-            title: 'Shrek: The Fifth',
+            title: 'Shrek: The Sixth',
             author: 'God',
             publishedAt: new Date('2006-06-12'),
         }
