@@ -4,22 +4,20 @@
             <th> Category ID </th>
             <th> Category </th>
             <th> Description </th>
-        
         </tr>
         <% allcats.forEach((catref, index) => { %>
-            <tr>
+        <tr>
                 
-                <td><%= catref.category_id %></td>
-                <td><%= catref.category %></td>
-                <td><%= catref.description %></td>
-                <td><a href='/category/<%= catref.category_id %>/show'>Details</a></td>
-                <td><a href='/category/<%= catref.category_id%>/edit'>Edit</a></td>
-                <td><a href='/category/<%= catref.category_id %>/delete'
-                onclick="return confirm('Are you sure you want to delete this record?');">Delete</a></td>
-            </tr>
+            <td><%= catref.category_id %></td>
+            <td><%= catref.category %></td>
+            <td><%= catref.description %></td>
+            <td><a href='/category/<%= catref.category_id %>/show'>Details</a></td>
+            <td><a href='/category/<%= catref.category_id%>/edit'>Edit</a></td>
+            <td><a href='/category/<%= catref.category_id %>/delete'
+            onclick="return confirm('Are you sure you want to delete this record?');">Delete</a></td>
+        </tr>
     <% }); %>
     </table>
-
     <% } else { %>
         <p>No Records Available</p>
     <% } %>

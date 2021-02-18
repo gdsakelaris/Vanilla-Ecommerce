@@ -4,9 +4,9 @@
     
     <table>
         
-        <tr> <td> Item Name: </td> <td> <input type="text" name="itemname" value=<%= onerec.itemname %> required> </td> </tr>
+        <tr> <td> Item Name: </td> <td> <input type="text" name="itemname" value="<%= onerec.itemname %>" required> </td> </tr>
         <tr> <td> Image: </td> <td> <input type="text" name="itemimage" value=<%= onerec.itemimage %> required> </td> </tr>
-        <tr> <td> Description: </td> <td> <input type="text" name="description" value=<%= onerec.description %> required> </td> </tr>
+        <tr> <td> Description: </td> <td> <textarea name="description" rows="10" cols="30"><%= onerec.description %></textarea> </td> </tr>
         <tr> <td> Category ID: </td> <td> <input type="number" name="category_id" value=<%= onerec.category_id %> required> </td> </tr>
         <tr> <td> Type ID: </td> <td> <input type="number" name="type_id" value=<%= onerec.type_id %> required> </td> </tr>
         <tr> <td> Sub Category 1: </td> <td> <input type="text" name="subcategory_1" value=<%= onerec.subcategory_1 %> required> </td></tr>
