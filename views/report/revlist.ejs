@@ -1,0 +1,28 @@
+<% if (allreviews.length > 0) {%>
+    <table>
+        <tr>
+            <th> Review ID </th>
+            <th> Person ID </th>
+            <th> Item ID </th>
+            <th> Review Date </th>
+            <th> Comments </th>
+            <th> Rating </th>
+            
+        
+        </tr>
+        <% allreviews.forEach((revref, index) => { %>
+            <tr>
+                <td><%= revref.review_id %></td>
+                <td><%= revref.person_id %></td>
+                <td><%= revref.item_id %></td>
+                <td><%= revref.reviewdate %></td>
+                <td><%= revref.comments %></td>
+                <td><%= revref.rating %></td>
+                
+            </tr>
+    <% }); %>
+    </table>
+
+    <% } else { %>
+        <p>No Reviews Available</p>
+    <% } %>

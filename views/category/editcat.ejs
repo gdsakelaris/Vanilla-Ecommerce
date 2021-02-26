@@ -2,7 +2,7 @@
 <form action="/category/save" method="post">
     <input type="hidden" name="category_id" value="<%=onecat.category_id%>" >
     <table>
-        <tr> <td> Category: </td> <td> <input type="text" name="category" value=<%= onecat.category %> required> </td> </tr>
+        <tr> <td> Category: </td> <td> <input type="text" name="category" value="<%= onecat.category %>" required> </td> </tr>
         <tr> <td> Description: </td> <td> <textarea name="description" rows="10" cols="30"><%= onecat.description %></textarea> </td> </tr>
     </table>
     <button type="submit">Save</button>

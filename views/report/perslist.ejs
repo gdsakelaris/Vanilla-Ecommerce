@@ -19,10 +19,7 @@
                 <td><%= persref.city %></td>
                 <td><%= persref.state %></td>
                 <td><%= persref.username %></td>
-                <td><a href='/person/<%= persref.person_id %>/show'>Details</a></td>
-                <td><a href='/person/<%= persref.person_id%>/edit'>Edit</a></td>
-                <td><a href='/person/<%= persref.person_id %>/delete'
-                onclick="return confirm('Are you sure you want to delete this record?');">Delete</a></td>
+                
             </tr>
     <% }); %>
     </table>
@@ -30,4 +27,3 @@
     <% } else { %>
         <p>No Records Available</p>
     <% } %>
-<p> <a href='/person/addperson'>Add New</a> </p>

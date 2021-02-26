@@ -33,6 +33,7 @@ var categoryRouter = require('./routes/category');
 var reviewRouter = require('./routes/review');
 var personRouter = require('./routes/person');
 var searchRouter = require ('./routes/search');
+var reportRouter = require ('./routes/report');
 
 var app = express();
 
@@ -59,6 +60,7 @@ app.use('/category', categoryRouter);
 app.use('/review', reviewRouter);
 app.use('/person', personRouter);
 app.use('/search', searchRouter);
+app.use('/report', reportRouter);
 
 
 // catch 404 and forward to error handler

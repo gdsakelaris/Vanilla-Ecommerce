@@ -1,5 +1,41 @@
 <h1>Welcome to Shirts Ink.</h1>
 
-       
+<table width="100%"><tr>
+    <td width="85%">
+       <% if (allrecs.length > 0) {%>
+            <% allrecs.forEach((recref, index) => { %>
+                    <product><table>
+                    <tr>
+                        <td><%= recref.item_id %></td>
+                        <td><%= recref.itemname %></td>
+                    </tr>
+                    <tr>
+                        <td><%= recref.category_id %></td>
+                        <td><%= recref.type_id %></td>
+                    </tr>
+                    <tr>
+                        <td><%= recref.size %></td>
+                        <td><%= recref.typeprice %></td>
+                    </tr>
+                    <tr>
+                        <td><%= recref.status %></td>
+                        <td><%= recref.homepage %></td>
+                    </tr>
+                    </table></product>
+                <% }); %>
+            
+                <% } %>
+    </td>
+
+    <td width="15%">
+        <% if (promos.length > 0) {%>
+            <% promos.forEach((recref, index) => { %>
+                <img src="/images/<%= recref.promoimage %>" alt ="<%=recref.promotitle %>">
+            <% }); %>
+            
+        <% } %>
+        
 
 
+    </td>
+</tr></table>

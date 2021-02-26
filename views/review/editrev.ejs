@@ -4,11 +4,11 @@
     
     <table>
         
-        <tr> <td> Person ID: </td> <td> <input type="number" name="person_id" value=<%= onerev.person_id %> required> </td> </tr>
-        <tr> <td> Item ID: </td> <td> <input type="number" name="item_id" value=<%= onerev.item_id %> required> </td> </tr>
-        <tr> <td> Review Date: </td> <td> <input type="text" name="reviewdate" value=<%= onerev.reviewdate %> required> </td> </tr>
-        <tr> <td> Comments: </td> <td> <input type="text" name="comments" value=<%= onerev.comments %> required> </td> </tr>
-        <tr> <td> Rating: </td> <td> <input type="number" name="rating" value=<%= onerev.rating %> required> </td> </tr>
+        <tr> <td> Person ID: </td> <td> <input type="number" name="person_id" value="<%= onerev.person_id %>" required> </td> </tr>
+        <tr> <td> Item ID: </td> <td> <input type="number" name="item_id" value="<%= onerev.item_id %>" required> </td> </tr>
+        <tr> <td> Review Date: </td> <td> <input type="text" name="reviewdate" value="<%= onerev.reviewdate %>" required> </td> </tr>
+        <tr> <td> Comments: </td> <td> <textarea name="comments" rows="10" cols="30"><%= onerev.comments %></textarea> </td> </tr>
+        <tr> <td> Rating (1-10): </td> <td> <input type="number" name="rating" value="<%= onerev.rating %>" required> </td> </tr>
         
                 
         
