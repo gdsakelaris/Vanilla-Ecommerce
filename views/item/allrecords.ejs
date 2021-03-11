@@ -18,7 +18,7 @@
                 <td><%= recref.category_id %></td>
                 <td><%= recref.type_id %></td>
                 <td><%= recref.size %></td>
-                <td><%= recref.typeprice %></td>
+                <td><%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.typeprice) %></td>
                 <td><%= recref.status %></td>
                 <td><%= recref.homepage %></td>
                 <td><a href='/item/<%= recref.item_id %>/show'>Details</a></td>

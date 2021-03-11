@@ -48,7 +48,7 @@ li a.active{
     font-size: 10px;
     border-radius: 4px;
     border: 2px solid #4CAF50;
-    box-shadow: 0 12 px 16px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0,.19);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0,.19);
 }
 
 product{

@@ -1,0 +1,27 @@
+<% if (allrecs.length > 0) {%>
+    <% allrecs.forEach((recref, index) => { %>
+        <product>
+            <form action="/catalog/add" method="post" >
+            <input type="hidden" name="item_id" value=<%= recref.item_id %> >
+            <table>
+                <tr>
+                    <td><b><%= recref.itemname %></b></td>
+                    <td>Price: <%= Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(recref.typeprice) %></td>
+                </tr>
+                <tr>
+                    <td><img height=100 width=100 src="/images/<%= recref.itemimage %>"></td>
+                    <td>Status: <%= recref.status %> Size: <%= recref.size%></td>
+                </tr>
+                <tr>
+                    <td><b><%= recref.category_id %></b></td>
+                    <td><%= recref.type_id %></td>
+                </tr>
+                <tr>
+                    <td> Quantity: <input type="text" name="qty" size=3 required> </td>
+                    <td> <button class="button1" type="submit">Add to Cart</button></td>
+                </tr>
+            </table>
+        </form>
+        </product>
+    <% }); %>
+<% } %>

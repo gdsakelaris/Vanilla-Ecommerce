@@ -7,7 +7,7 @@
             <th> Review Date </th>
             <th> Comments </th>
             <th> Rating </th>
-            
+            <th> Status </th>
         
         </tr>
         <% allreviews.forEach((revref, index) => { %>
@@ -18,6 +18,7 @@
                 <td><%= revref.reviewdate %></td>
                 <td><%= revref.comments %></td>
                 <td><%= revref.rating %></td>
+                <td><%= revref.status %></td>
                 <td><a href='/review/<%= revref.review_id %>/show'>Details</a></td>
                 <td><a href='/review/<%= revref.review_id%>/edit'>Edit</a></td>
                 <td><a href='/review/<%= revref.review_id %>/delete'

@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
 const mariadb = require('mariadb/callback');
+const session = require('express-session');
 
 const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', 
         user: 'gsakelar', password: 'gsakelar', database: 'shirtsinc'});
@@ -34,6 +35,10 @@ var reviewRouter = require('./routes/review');
 var personRouter = require('./routes/person');
 var searchRouter = require ('./routes/search');
 var reportRouter = require ('./routes/report');
+var saleorderRouter = require ('./routes/saleorder');
+var orderdetailRouter = require ('./routes/orderdetail');
+var subscriptionRouter = require ('./routes/subscription');
+var catalogRouter = require('./routes/catalog');
 
 var app = express();
 
@@ -47,6 +52,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session({secret: 'ShirtsInkAppSecret'}));
+app.use(function(req,res,next){
+    res.locals.session = req.session;
+    next();
+});
+
 
 
 app.use('/', indexRouter);
@@ -61,7 +72,10 @@ app.use('/review', reviewRouter);
 app.use('/person', personRouter);
 app.use('/search', searchRouter);
 app.use('/report', reportRouter);
-
+app.use('/saleorder', saleorderRouter);
+app.use('/orderdetail', orderdetailRouter);
+app.use('/subscription', subscriptionRouter);
+app.use('/catalog', catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

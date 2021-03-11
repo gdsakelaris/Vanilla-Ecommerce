@@ -4,7 +4,20 @@
     <tr> <td> Item Name: </td> <td> <input type="text" name="itemname" required> </td> </tr>
     <tr> <td> Image: </td> <td> <input type="text" name="itemimage" required> </td> </tr>
     <tr> <td> Description: </td> <td> <textarea name="description" rows="10" cols="30"> Description </textarea> </td> </tr>
-    <tr> <td> Category ID: </td> <td> <input type="number" name="category_id" required> </td> </tr>
+    <tr> <td> Category ID: </td> <td> 
+        
+                                <select name="category_id" required>
+                                    <optgroup label="Select Category">
+                                        <% for (var i = 0; i < category.length; i++) { %>
+                                            <option value=<%= category[i].category_id %>>
+                                                <%= category[i].category %> </option>
+                                        <% } %>
+                                    </optgroup>
+                                </select>
+        
+                                </td> </tr>
+        
+        
     <tr> <td> Brand ID: </td> <td> <input type="number" name="type_id" required> </td> </tr>
     <tr> <td> Demographic: </td> <td> <input type="text" name="subcategory_1" required> </td></tr>
     <tr> <td> Material: </td> <td> <input type="text" name="subcategory_2" required> </td></tr>
