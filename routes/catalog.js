@@ -62,7 +62,9 @@ router.get('/cart', function(req, res, next){
     if (!Array.isArray(req.session.cart) || !req.session.cart.length){
         res.render('cart', {cartitems: 0 });
     } else {
-        let query = "SELECT item_id, itemname, itemimage, category_id, type_id, size, typeprice, status FROM item WHERE item_id IN (" + req.session.cart + ")";
+        
+        let query = "SELECT item_id, itemname, itemimage, category_id, type_id, size, typeprice, status FROM item WHERE item_id IN (" + req.session.cart + ") order by find_in_set(item_id, '" + req.session.cart + "');";
+
 
         // execute query
         db.query(query, (err, result) => {

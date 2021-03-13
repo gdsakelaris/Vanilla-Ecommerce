@@ -17,12 +17,26 @@ router.get('/login', function(req, res, next) {
     res.render('person/login', {message: "Please Login"});
 });
 
+// ==================================================
+// Route Check Login Credentials
+// ==================================================
+router.get('/logout', function(req, res, next) {
+    // Empty out the customer identification session variables
+    req.session.customer_id = 0;
+    req.session.custname = "";
+    req.session.isadmin = 0;
+    // Empty out the items from the cart and quantity arrays
+    req.session.cart = [];
+    req.session.qty = [];
+    res.redirect('/');
+});
+
 
 // ==================================================
 // Route Check Login Credentials
 // ==================================================
 router.post('/login', function(req, res, next) {
-    let query = "select person_id, firstname, lastname, password from person WHERE username = '" + req.body.username + "'";
+    let query = "select person_id, firstname, lastname, password, isadmin from person WHERE username = '" + req.body.username + "'";
     // execute query
     db.query(query, (err, result) => {
         if (err) {res.render('error');}
@@ -37,6 +51,8 @@ router.post('/login', function(req, res, next) {
                     req.session.customer_id = custid;
                     var custname = result[0].firstname + " "+ result[0].firstname;
                     req.session.custname = custname;
+                    var isadmin = result[0].isadmin;
+                    req.session.isadmin = isadmin;
                     res.redirect('/');
                 } else {
                     // password do not match
