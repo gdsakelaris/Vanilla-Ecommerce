@@ -1,1 +1,7 @@
-# ShirtsInc is a mock Ecommerce website.
+# "ShirtsInc." : My first Ecommerice website
+
+### Built with Vanilla JS
+
+
+
+
